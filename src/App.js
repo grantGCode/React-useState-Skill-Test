@@ -1,30 +1,26 @@
 import { useState } from 'react';
 import './App.css';
-import Number from './components/Number'
-// import ButtonIncreace from './components/ButtonIncreace'
-// import ButtonDecreace from './components/ButtonDecreace'
+
 
 
 
 function App() {
-  const [yourNumberIs] = useState()
+  const [yourNumberIs, setNumber] = useState(1)
+  // const [subtact, subtractNumber] = useState(decreaceNumber)
 
-const decreaceNumber = (n) => {
-      console.log('decreaceNumber function ran');
-     n --;
-    return n
+const  decreaceNumber = () => { 
+     setNumber(yourNumberIs - 1)
   }
 
-const increaceNumber = (n) => {
-  console.log('increaceNumber function ran');
-   n--;
- return n
+const increaceNumber = () => {
+   setNumber(yourNumberIs + 1);
 }
 
   return (
     <div>
-      <Number numb={yourNumberIs} />
-      <button onClick={decreaceNumber}>Decreace</button><button onClick={increaceNumber}>Increace</button>
+      <h2>Your Number Is:</h2>
+      <h2>{yourNumberIs}</h2>
+      <button className='decreace-button'onClick={decreaceNumber}>Decreace</button><button onClick={increaceNumber}>Increace</button>
     </div>
   );
 }
